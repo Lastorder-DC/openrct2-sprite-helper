@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const convertButton = document.getElementById("convertButton");
     const resultDiv = document.getElementById("result");
 
-    convertButton.addEventListener("click", function () {
+    function convertInputValue() {
         const inputValue = parseInt(input.value);
 
         if (!isNaN(inputValue)) {
@@ -15,6 +15,15 @@ document.addEventListener("DOMContentLoaded", function () {
             resultDiv.textContent = `변환된 숫자: ${p0}, ${p1}, ${p2}, ${p3}`;
         } else {
             resultDiv.textContent = "올바른 숫자를 입력하세요.";
+        }
+    }
+
+    convertButton.addEventListener("click", convertInputValue);
+
+    // Enter 키를 누르면 변환 함수 호출
+    input.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            convertInputValue();
         }
     });
 });
