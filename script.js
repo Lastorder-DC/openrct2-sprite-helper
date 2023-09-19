@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const p2 = (inputValue >> 16) & 0xFF;
             const p3 = (inputValue >> 24) & 0xFF;
 
-            resultDiv.textContent = `변환된 숫자: ${p0}, ${p1}, ${p2}, ${p3}`;
+            resultDiv.textContent = `{INLINE_SPRITE}{${p0}}{${p1}}{${p2}}{${p3}}`;
         } else {
             resultDiv.textContent = "올바른 숫자를 입력하세요.";
         }
